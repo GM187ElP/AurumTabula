@@ -1,0 +1,29 @@
+# Fly.io related
+fly.toml
+
+# Rust build artifacts
+target/
+**/*.rs.bk
+
+# IDE
+.idea/
+.vscode/
+
+# Environment
+.env
+.env.local
+
+# Git
+.git/
+.gitignore
+
+# Tests
+tests/
+
+# Documentation
+*.md
+LICENSE
+
+# Deployment
+DEPLOYMENT.md
+
