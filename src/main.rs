@@ -1,4 +1,4 @@
-use axum::Router;
+use axum::{Router, response::Html, routing::get};
 use dotenv::dotenv;
 use sqlx::PgPool;
 use std::env;
@@ -18,6 +18,7 @@ async fn main() {
     let app_state = AppState { db };
 
     let app = Router::new()
+        .route("/", get(homepage))
         .merge(transactions::routes())
         .with_state(app_state);
 
@@ -27,4 +28,13 @@ async fn main() {
 
     println!("Server running at http://127.0.0.1:3000");
     axum::serve(listener, app).await.unwrap();
+}
+
+async fn homepage() -> Html<&'static str> {
+    Html(
+        r#"
+        <h1>Welcome to AurumTabula</h1>
+        <p><a href="/transactions/new">➕ Add New Transaction</a></p>
+    "#,
+    )
 }
