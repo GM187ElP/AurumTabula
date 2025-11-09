@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Transaction</title>
+</head>
+<body>
+<h1>Add New Transaction</h1>
+
+<form method="post" action="/transactions">
+    <label>Customer ID (Optional):</label>
+    <input type="text" name="customer_id"><br>
+
+    <label>Transaction Type:</label>
+    <select name="transaction_type">
+        <option value="buy">Buy</option>
+        <option value="sell">Sell</option>
+    </select><br>
+
+    <label>Carat:</label>
+    <input type="number" name="carat" required><br>
+
+    <label>Gold Type:</label>
+    <select name="gold_type">
+        <option value="fragile">Fragile</option>
+        <option value="melted">Melted</option>
+        <option value="coin">Coin</option>
+    </select><br>
+
+    <label>Persian Date:</label>
+    <input type="text" name="persian_date" required><br>
+
+    <label>Weight (gram):</label>
+    <input type="text" name="weight_gram" required><br>
+
+    <label>Total Price:</label>
+    <input type="number" name="total_price" required><br>
+
+    <label>Notes (Optional):</label>
+    <textarea name="notes"></textarea><br>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

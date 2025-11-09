@@ -1,4 +1,4 @@
-use aurumtabula::utilities::date::gregorian_to_jalali;
+use aurumtabula::app::helpers::date::gregorian_to_jalali;
 
 #[cfg(test)]
 mod tests {
@@ -7,7 +7,7 @@ mod tests {
 
     #[test]
     fn test_gregorian_to_jalali() {
-        let date = Utc.with_ymd_and_hms(2025, 11, 6,4, 9, 3).unwrap();
+        let date = Utc.with_ymd_and_hms(2025, 11, 6, 4, 9, 3).unwrap();
 
         let jalali = gregorian_to_jalali(date);
         dbg!(&jalali);
